@@ -1,0 +1,49 @@
+---
+title: "Lab1 - Linear Regression"
+author: "Matheus Maia"
+date: "26 de setembro de 2018"
+output: html_document
+---
+
+```{r message=FALSE, echo=FALSE, warning=FALSE}
+library(tidyverse)
+library(here)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+library(caret)
+library(lattice)
+library(DataExplorer)
+```
+
+# Objetivos
+- Entender os conceitos relacionados á Regressão Linear na prática
+- Utilizar uma base de dados pública sobre votações para extrair informações úteis  
+
+# Dados
+```{r}
+votos_2006_raw = read_csv(here("eleicoes_2006.csv"))
+votos_2010_raw = read_csv(here("eleicoes_2010.csv"))
+votos_2006_2010_raw = read_csv(here("eleicoes_2006_e_2010.csv"))
+
+head(votos_2006_raw)
+
+missing_data <- plot_missing(votos_2006_2010_raw)
+```
+
+
+# 1- Um modelo de regressão múltipla.
+##Um modelo de regressão múltipla com todas as variáveis é plausível para explicar a variação em y (número de votos) em 2006? Mesma pergunta para 2010. 
+
+# 2 - Comparação entre regressões
+## Compare as regressões construídas para 2006 e 2010. Quais as diferenças/semelhanças percebidas? 
+
+# 3 - odas as variáveis são úteis para os modelos de regressão? 
+## Todas as variáveis são úteis para os modelos de regressão? Há variáveis redudantes? Faça análises para 2006 e 2010 separadamente. 
+
+# 4 - Novo modelo sem variáveis redundantes
+## No caso de haver variáveis pouco explicativas e/ou redudantes, construa um novo modelo sem essas variáveis e o compare ao modelo com todas as variáveis (e.g. em termos de R2 e RSE). Faça isso para 2006 e 2010 separadamente.
+
+# 5 - Modelo considerando 2006 e 2010
+## Construa agora uma regressão considerando os anos 2006 e 2010 em conjunto. Que diferenças/semelhanças você percebe em relação aos modelos individuais por ano? Veja a questão 2 para sugestões que você usar para comparação.
+
